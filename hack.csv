@@ -1,0 +1,17 @@
+﻿ID,type,category,occasion,color,comfort
+1,dress,dress,formal,nuetral,1
+2,dress,dress,semi-formal,nuetral,1
+3,top,short sleve,business casual,nuetral,5
+4,top,long sleve,business casual,nuetral,1
+5,bottom,pants,business casual,nuetral,1
+6,top,short sleve,althleisure,nuetral,5
+7,bottom,pants,althleisure,colorful,5
+8,bottom,shorts,casual,nuetral,1
+9,bottom,pants,casual,nuetral,5
+10,jacket,jacket,casual,nuetral,3
+11,jacket,jacket,casual,nuetral,5
+12,jacket,jacket,casual,colorful,5
+13,jacket,jacket,casual,colorful,4
+14,bottom,shorts,lounge,nuetral,3
+15,top,short sleve,lounge,colorful,5
+16,top,short sleve,lounge,colorful,5
