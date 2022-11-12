@@ -1,0 +1,267 @@
+---
+title: "closet"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(tuple)
+library(dplyr)
+library(dasc2594)
+library(here)
+library(readxl)
+library(stringr)
+
+```
+
+```{r}
+dat <- read.csv('sample.csv')
+#dat <- tolower(dat)
+
+is.atomic(dat)
+```
+
+
+
+```{r}
+#dat <- filter(data, (occasion == #style | comfy == #comfort))
+# The outside if statement is the weather
+# The inside if statement uses user input to select the outfit
+
+weather <- 39
+occasion <- 'formal'
+
+#df[str_detect(df$team, "avs"), ]
+
+if (weather < 50){
+  if (occasion == 'formal'){
+    dress <- dat[str_detect(dat$type, 'dress'), ]
+    random_num <- 1 : length(dress)
+    select_dress <- sample(random_num, 1)
+    #select_dress <- dat[random_num]
+    # we need to return the ID number associated with each clothing item. ID not Index, but pull the png file from the id. 
+    #return (dat$ID == select_dress)
+    print('hell yeah!')
+  }
+  else if (occasion == 'casual') {
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'lounge'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'semi-formal'){
+    dress <- filter(dat, str_detect(type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num] 
+  }
+  else if (occasion == 'athleisure'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'business casual'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  # We recommend the jacket for all options below 50 degrees
+  jacket <- filter(dat, str_detect(type == 'jacket'))
+  random_num <- random.seed(1 : len(jacket))
+  select_jacket <- jacket[random_num]
+  
+} else if ((50 <= weather) & (weather > 70)){
+    if (occasion == 'formal'){
+    dress <- filter(dat, str_detect(type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num]
+    
+  }
+  else if (occasion == 'casual'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'lounge'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'semi-formal'){
+    dress <- filter(dat, str_detect(type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num] 
+  }
+  else if (occasion == 'athleisure'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'business casual'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'pants')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+} else if(weather > 70){
+    if (occasion == 'formal'){
+    dress <- filter(dat, str_detect(type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num]
+    # we need to return the ID number associated with each clothing item. ID not Index, but pull the png file from the id. 
+    # We need to recommend to wear a jacket
+  }
+  else if (occasion == 'casual'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'lounge'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'semi-formal'){
+    dress <- filter(dat, str_detect(type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num] 
+  }
+  else if (occasion == 'athleisure'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+  else if (occasion == 'business casual'){
+    top <- filter(dat, str_detect((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    if(select_top[color]=='colorful') {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts') & (color == 'nuetral')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    } 
+    else {
+      bottom <- filter(dat, str_detect((type == 'bottom') & (category == 'shorts')))
+      random_num <- random.seed(1 : len(bottom))
+      select_bottom <- bottom[random_num]
+    }
+  }
+} 
+```
+
+
