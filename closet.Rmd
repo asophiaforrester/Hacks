@@ -1,0 +1,165 @@
+---
+title: "closet"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(tuple)
+library(dplyr)
+library(dasc2594)
+```
+
+
+
+```{r}
+dat <- filter(dat, (occasion.equals(events)&(comfy == comfort)))
+
+if (weather < 50){
+  if (occasion == 'formal'){
+    dress <- filter(dat, (type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num]
+    # we need to return the ID number associated with each clothing item. ID not Index, but pull the png file from the id. 
+    # We need to recommend to wear a jacket
+  }
+  else if (occasion == 'casual'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'lounge'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'semi-formal'){
+    dress <- filter(dat, (type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num] 
+  }
+  else if (occasion == 'athleisure'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'business casual'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  
+  jacket <- filter(dat, (type == 'jacket'))
+  random_num <- random.seed(1 : len(jacket))
+  select_jacket <- jacket[random_num]
+  
+} else if (50 <= weather < 70){
+    if (occasion == 'formal'){
+    dress <- filter(dat, (type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num]
+    # we need to return the ID number associated with each clothing item. ID not Index, but pull the png file from the id. 
+    # We need to recommend to wear a jacket
+  }
+  else if (occasion == 'casual'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'lounge'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'semi-formal'){
+    dress <- filter(dat, (type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num] 
+  }
+  else if (occasion == 'athleisure'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'business casual'){
+    top <- filter(dat, ((type == 'top') & (category == 'long sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'long pants')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+} else if(weather > 70){
+    if (occasion == 'formal'){
+    dress <- filter(dat, (type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num]
+    # we need to return the ID number associated with each clothing item. ID not Index, but pull the png file from the id. 
+    # We need to recommend to wear a jacket
+  }
+  else if (occasion == 'casual'){
+    top <- filter(dat, ((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'shorts')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'lounge'){
+    top <- filter(dat, ((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'shorts')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'semi-formal'){
+    dress <- filter(dat, (type == 'dress'))
+    random_num <- random.seed(1 : len(dress))
+    select_dress <- dress[random_num] 
+  }
+  else if (occasion == 'athleisure'){
+    top <- filter(dat, ((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'shorts')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+  else if (occasion == 'business casual'){
+    top <- filter(dat, ((type == 'top') & (category == 'short sleeve')))
+    random_num <- random.seed(1 : len(top))
+    select_top <- top[random_num]
+    bottom <- filter(dat, ((type == 'bottom') & (category == 'shorts')))
+    random_num <- random.seed(1 : len(bottom))
+    select_bottom <- bottom[random_num]
+  }
+} 
+
+
+```
+
